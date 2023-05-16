@@ -9,10 +9,7 @@ import java.util.List;
 @Table(name = "discap_user")
 public class DiscapUser {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private Integer id;
-
 
     @Column(name = "document_type")
     private String documentType;
@@ -36,7 +33,8 @@ public class DiscapUser {
     @Column(name = "email")
     private String email;
 
-    private List<Object> discapacitys;
+    @Column(name = "discapacity")
+    private String discapacity;
 
     @Column(name = "password")
     private String password;
@@ -76,10 +74,6 @@ public class DiscapUser {
 
     public String getEmail() {
         return email;
-    }
-
-    public List<Object> getDiscapacitys() {
-        return discapacitys;
     }
 
     public String getPassword() {
@@ -123,9 +117,6 @@ public class DiscapUser {
         this.email = email;
     }
 
-    public void setDiscapacitys(List<Object> discapacitys) {
-        this.discapacitys = discapacitys;
-    }
 
     public void setPassword(String password) {
         this.password = password;
@@ -141,5 +132,13 @@ public class DiscapUser {
 
     public void setRegisterType(String registerType) {
         this.registerType = registerType;
+    }
+
+    public String getDiscapacity() {
+        return discapacity;
+    }
+
+    public void setDiscapacity(String discapacity) {
+        this.discapacity = discapacity;
     }
 }
