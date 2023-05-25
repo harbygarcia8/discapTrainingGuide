@@ -2,6 +2,7 @@ package com.discaptraining.apimedicalhistory.domain.entity;
 
 import jakarta.persistence.*;
 
+@Entity
 public class TrainingPlan {
 
     @Id
@@ -15,8 +16,8 @@ public class TrainingPlan {
     @Column
     private String descriptionVideo;
 
+    @JoinColumn
     @OneToOne
-    @Column
     private DiscapUser discapUser;
 
     @Column
