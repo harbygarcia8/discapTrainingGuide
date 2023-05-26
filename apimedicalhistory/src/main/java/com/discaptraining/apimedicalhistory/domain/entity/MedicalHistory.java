@@ -1,11 +1,14 @@
 package com.discaptraining.apimedicalhistory.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
 public class MedicalHistory {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +22,13 @@ public class MedicalHistory {
 
     @Column
     private String descriptionMedicalHistory;
+
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @JoinColumn
     @OneToOne
     private DiscapUser specialist;
 
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @JoinColumn
     @OneToOne
     private DiscapUser discapUser;
@@ -52,6 +58,10 @@ public class MedicalHistory {
         this.descriptionMedicalHistory = descriptionMedicalHistory;
     }
 
+    public DiscapUser getSpecialist() {
+        return specialist;
+    }
+
     public void setSpecialist(DiscapUser specialist) {
         this.specialist = specialist;
     }
@@ -63,4 +73,5 @@ public class MedicalHistory {
     public void setDiscapUser(DiscapUser discapUser) {
         this.discapUser = discapUser;
     }
+
 }

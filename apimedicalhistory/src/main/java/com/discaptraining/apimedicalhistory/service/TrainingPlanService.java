@@ -31,4 +31,8 @@ public class TrainingPlanService {
     public List<TrainingPlan> getAllTrainingPlan(){
         return (List<TrainingPlan>) trainingPlan.findAll();
     }
+
+    public List<TrainingPlan> getTrainingPlanDiscapUser(Integer discapUserID){
+        return (List<TrainingPlan>) trainingPlan.findByTrainingPlanDiscapUserID(discapUserID);
+    }
 }

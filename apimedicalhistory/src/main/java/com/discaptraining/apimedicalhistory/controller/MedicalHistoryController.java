@@ -21,6 +21,11 @@ public class MedicalHistoryController {
         return medicalHistoryService.getAllMedicalHistory();
     }
 
+    @GetMapping("/discapUser")
+    public MedicalHistory getMedicalHistoryDiscapUser (@RequestParam Integer discapuserID){
+        return medicalHistoryService.getMedicalHistoryByDiscapUserID(discapuserID);
+    }
+
     @PostMapping
     public MedicalHistory createMedicalHistory(@RequestBody MedicalHistory bodyMedicalHistory){
         return medicalHistoryService.saveMedicalHistory(bodyMedicalHistory);

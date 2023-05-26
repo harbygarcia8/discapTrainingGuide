@@ -5,6 +5,8 @@ import com.discaptraining.apimedicalhistory.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
     @Autowired
@@ -12,5 +14,9 @@ public class UserService {
 
     public DiscapUser saveDiscapUser(DiscapUser bodyDiscapUsers){
         return userRepository.save(bodyDiscapUsers);
+    }
+
+    public List<DiscapUser> getDiscapUserRegisterType(){
+        return userRepository.findByDiscapUserRegisterType();
     }
 }

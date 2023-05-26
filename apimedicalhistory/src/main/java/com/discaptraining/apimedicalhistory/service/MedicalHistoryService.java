@@ -31,4 +31,8 @@ public class MedicalHistoryService {
         return (List<MedicalHistory>) medicalHistory.findAll();
     }
 
+    public MedicalHistory getMedicalHistoryByDiscapUserID(Integer discapUserId){
+        return medicalHistory.findByDiscapUserID(discapUserId);
+    }
+
 }

@@ -20,6 +20,11 @@ public class TrainingPlanController {
         return trainingPlanService.getAllTrainingPlan();
     }
 
+    @GetMapping("/MyVideo")
+    public List<TrainingPlan> getTrainingPlanDiscapUser (@RequestParam Integer discapUserID){
+        return trainingPlanService.getTrainingPlanDiscapUser(discapUserID);
+    }
+
     @PostMapping
     public TrainingPlan createTrainingPlan(@RequestBody TrainingPlan bodyTrainingPlan){
         return trainingPlanService.saveTrainingPlan(bodyTrainingPlan);

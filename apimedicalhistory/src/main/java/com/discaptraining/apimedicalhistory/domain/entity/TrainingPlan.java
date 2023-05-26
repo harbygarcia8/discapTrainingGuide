@@ -1,5 +1,6 @@
 package com.discaptraining.apimedicalhistory.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,6 +17,7 @@ public class TrainingPlan {
     @Column
     private String descriptionVideo;
 
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @JoinColumn
     @OneToOne
     private DiscapUser discapUser;
@@ -73,4 +75,6 @@ public class TrainingPlan {
     public void setUrl(String url) {
         this.url = url;
     }
+
+
 }
