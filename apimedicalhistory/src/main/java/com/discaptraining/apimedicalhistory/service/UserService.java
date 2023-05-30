@@ -16,7 +16,7 @@ public class UserService {
         return userRepository.save(bodyDiscapUsers);
     }
 
-    public List<DiscapUser> getDiscapUserRegisterType(){
-        return userRepository.findByDiscapUserRegisterType();
+    public List<DiscapUser> getDiscapUserRegisterType(String registerType){
+        return userRepository.findByDiscapUserRegisterType(registerType);
     }
 }

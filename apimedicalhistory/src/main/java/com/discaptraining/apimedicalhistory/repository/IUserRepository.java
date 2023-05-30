@@ -12,8 +12,9 @@ import java.util.Optional;
 @Repository
 public interface IUserRepository extends CrudRepository<DiscapUser, Integer> {
 
-    @Query(value = "SELECT id, active, discapacity, document_type, email, gender, name, password, document, phone, register_type, last_name FROM discap_user where register_type = 'USUARIO'", nativeQuery = true)
-    List<DiscapUser> findByDiscapUserRegisterType();
+    @Query(value = "SELECT id, active, discapacity, document_type, email, gender, name, password, document, phone, register_type, last_name FROM discap_user where register_type = ?1", nativeQuery = true)
+    List<DiscapUser> findByDiscapUserRegisterType(String registerType);
+
 
 
 }

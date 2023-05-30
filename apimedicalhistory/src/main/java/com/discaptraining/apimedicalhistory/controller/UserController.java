@@ -19,7 +19,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public List<DiscapUser> getDiscapUserRegisterType(){
-       return userService.getDiscapUserRegisterType();
+    public List<DiscapUser> getDiscapUserRegisterType(String registerType){
+       return userService.getDiscapUserRegisterType(registerType);
     }
 }
